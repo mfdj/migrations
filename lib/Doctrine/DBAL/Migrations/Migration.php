@@ -84,7 +84,7 @@ class Migration
             $to = $this->configuration->getLatestVersion();
         }
 
-        $string  = sprintf("# Doctrine Migration File Generated on %s\n", date('Y-m-d H:i:s'));
+        $string  = sprintf("# Doctrine Migration File Generated on %s\n", gmdate('Y-m-d H:i:s'));
         $string .= sprintf("# Migrating from %s to %s\n", $from, $to);
 
         foreach ($sql as $version => $queries) {
@@ -95,7 +95,7 @@ class Migration
         }
         if (is_dir($path)) {
             $path = realpath($path);
-            $path = $path . '/doctrine_migration_' . date('YmdHis') . '.sql';
+            $path = $path . '/doctrine_migration_' . gmdate('YmdHis') . '.sql';
         }
 
         $this->outputWriter->write("\n".sprintf('Writing migration file to "<info>%s</info>"', $path));

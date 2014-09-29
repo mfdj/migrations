@@ -107,7 +107,7 @@ EOT
             return;
         }
 
-        $version = date('YmdHis');
+        $version = gmdate('YmdHis');
         $path = $this->generateMigration($configuration, $input, $version, $up, $down);
 
         $output->writeln(sprintf('Generated new migration class to "<info>%s</info>" from schema differences.', $path));

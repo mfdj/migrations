@@ -156,7 +156,7 @@ class Configuration
     }
 
     /**
-     * Returns a timestamp version as a formatted date
+     * Returns a timestamp version as a formatted gmdate
      *
      * @param string $version
      *
